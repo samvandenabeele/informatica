@@ -3,34 +3,35 @@
  <title>Simpele Oscillator</title>
  <link rel="stylesheet" href="style.css">
  </head>
-    <body>
-        <h1>Simpele Oscillator</h1>
- 
-        <button class='button' onclick="on()">On</button>
-        <button class='button' onclick="off()">Off</button>
-        <br>
-        <button class='button' onclick="setFrequency(400)">400Hz</button>
-        <button class='button' onclick="setFrequency(800)">800Hz</button>
-        <br>
-        <button class='button' onclick="setWaveform('sine')">Sinus</button>
-        <button class='button' onclick="setWaveform('square')">Blokgolf</button>
-        <br>
-        <button class='button' onclick="setAmplitude(0.01)">stil</button>
-        <button class='button' onclick="setAmplitude(0.07)">luid</button>
-        <br>
-        <button class='button2' onclick="on2()">On</button>
-        <button class='button2' onclick="off2()">Off</button>
-        <br>
-        <button class='button2' onclick="setFrequency2(401)">401Hz</button>
-        <button class='button2' onclick="setFrequency2(800)">800Hz</button>
-        <br>
-        <button class='button2' onclick="setWaveform2('sine')">Sinus</button>
-        <button class='button2' onclick="setWaveform2('square')">Blokgolf</button>
-        <br>
-        <button class='button2' onclick="setAmplitude2(0.01)">stil</button>
-        <button class='button2' onclick="setAmplitude2(0.07)">luid</button>
-        <br>
- 
+    <body style="display: flex; justify-content: center; align-items: center; height: 100vh; margin: 0;">
+        <div style="text-align: center;">
+            <h1>Simpele Oscillator</h1>
+    
+            <button class='button' onclick="on()">On</button>
+            <button class='button' onclick="off()">Off</button>
+            <br>
+            <button class='button' onclick="setFrequency(400)">400Hz</button>
+            <button class='button' onclick="setFrequency(800)">800Hz</button>
+            <br>
+            <button class='button' onclick="setWaveform('sine')">Sinus</button>
+            <button class='button' onclick="setWaveform('square')">Blokgolf</button>
+            <br>
+            <button class='button' onclick="setAmplitude(0.01)">stil</button>
+            <button class='button' onclick="setAmplitude(0.07)">luid</button>
+            <br>
+            <button class='button2' onclick="on2()">On</button>
+            <button class='button2' onclick="off2()">Off</button>
+            <br>
+            <button class='button2' onclick="setFrequency2(401)">401Hz</button>
+            <button class='button2' onclick="setFrequency2(800)">800Hz</button>
+            <br>
+            <button class='button2' onclick="setWaveform2('sine')">Sinus</button>
+            <button class='button2' onclick="setWaveform2('square')">Blokgolf</button>
+            <br>
+            <button class='button2' onclick="setAmplitude2(0.01)">stil</button>
+            <button class='button2' onclick="setAmplitude2(0.07)">luid</button>
+            <br>
+        </div>
     <script>
  
         let ctx = new window.AudioContext(); // the audio context
