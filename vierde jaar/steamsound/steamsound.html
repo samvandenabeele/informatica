@@ -1,0 +1,94 @@
+<html>
+ <head>
+ <title>Simpele Oscillator</title>
+ <link rel="stylesheet" href="style.css">
+ </head>
+    <body>
+        <h1>Simpele Oscillator</h1>
+ 
+        <button class='button' onclick="on()">On</button>
+        <button class='button' onclick="off()">Off</button>
+        <br>
+        <button class='button' onclick="setFrequency(400)">400Hz</button>
+        <button class='button' onclick="setFrequency(800)">800Hz</button>
+        <br>
+        <button class='button' onclick="setWaveform('sine')">Sinus</button>
+        <button class='button' onclick="setWaveform('square')">Blokgolf</button>
+        <br>
+        <button class='button' onclick="setAmplitude(0.01)">stil</button>
+        <button class='button' onclick="setAmplitude(0.07)">luid</button>
+        <br>
+        <button class='button2' onclick="on2()">On</button>
+        <button class='button2' onclick="off2()">Off</button>
+        <br>
+        <button class='button2' onclick="setFrequency2(401)">401Hz</button>
+        <button class='button2' onclick="setFrequency2(800)">800Hz</button>
+        <br>
+        <button class='button2' onclick="setWaveform2('sine')">Sinus</button>
+        <button class='button2' onclick="setWaveform2('square')">Blokgolf</button>
+        <br>
+        <button class='button2' onclick="setAmplitude2(0.01)">stil</button>
+        <button class='button2' onclick="setAmplitude2(0.07)">luid</button>
+        <br>
+ 
+    <script>
+ 
+        let ctx = new window.AudioContext(); // the audio context
+        let osc = ctx.createOscillator(); // the oscillator
+        let amp = ctx.createGain(); // the amplifier
+        osc.connect(amp); // connect oscillator to amplifier
+        amp.connect(ctx.destination); // connect amplifier to DAC
+        amp.gain.value = 0.1;
+        osc.start(); // start oscillator
+ 
+        function on() {
+            ctx.resume();
+        }
+ 
+        function off() {
+            ctx.suspend();
+        }
+ 
+        function setWaveform(value) {
+            osc.type = value;
+        }
+ 
+        function setFrequency(value) {
+            osc.frequency.value = value;
+        }
+ 
+        function setAmplitude(value) {
+            amp.gain.value = value;
+        }
+ 
+        let ctx2 = new window.AudioContext(); // the audio context
+        let osc2 = ctx2.createOscillator(); // the oscillator
+        let amp2 = ctx2.createGain(); // the amplifier
+        osc2.connect(amp2); // connect oscillator to amplifier
+        amp2.connect(ctx2.destination); // connect amplifier to DAC
+        amp2.gain.value = 0.1;
+        osc2.start(); // start oscillator
+ 
+        function on2() {
+            ctx2.resume();
+        }
+ 
+        function off2() {
+            ctx2.suspend();
+        }
+ 
+        function setWaveform2(value) {
+            osc2.type = value;
+        }
+ 
+        function setFrequency2(value) {
+            osc2.frequency.value = value;
+        }
+ 
+        function setAmplitude2(value) {
+            amp2.gain.value = value;
+        }
+        </script>
+        
+    </body>
+</html>
