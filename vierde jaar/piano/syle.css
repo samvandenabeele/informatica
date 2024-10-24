@@ -1,0 +1,24 @@
+.button {
+    margin: 5px;
+    width: 70px;
+    height: 30px;
+    background-color: #4CAF50;
+    border-radius: 0px;
+    border-width: 0px;
+    color: white;
+}
+
+.button2 {
+    margin: 5px;
+    width: 70px;
+    height: 30px;
+    background-color: red;
+    border-radius: 0px;
+    border-width: 0px;
+    color: white;
+}
+
+body {
+    background-color: #f2f2f2;
+    font-family: Arial, sans-serif;
+}

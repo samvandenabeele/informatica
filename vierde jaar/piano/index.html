@@ -1,0 +1,43 @@
+<html>
+ <head>
+ <title>Simpele Oscillator</title>
+ <link rel="stylesheet" href="style.css">
+ </head>
+    <body style="display: flex; justify-content: center; align-items: center; height: 100vh; margin: 0;">
+        <div style="text-align: center;">
+            <h1>Simpele Oscillator</h1>
+
+            <hr>
+
+            <button class='button' onclick="on()">On</button>
+            <button class='button' onclick="off()">Off</button>
+            <br>
+            <button class='button' onmousedown="setFrequency(440)" onmouseup="setFrequency(0)" onmouseleave="setFrequency(0)">440Hz</button>
+            <button class='button' onmousedown="setFrequency(493.883)" onmouseup="setFrequency(0)" onmouseleave="setFrequency(0)">493.883Hz</button>
+        </div>
+    <script>
+ 
+        let ctx = new window.AudioContext(); // the audio context
+        let osc = ctx.createOscillator(); // the oscillator
+        let amp = ctx.createGain(); // the amplifier
+        osc.connect(amp); // connect oscillator to amplifier
+        amp.connect(ctx.destination); // connect amplifier to DAC
+        amp.gain.value = 0.1;
+        osc.start(); // start oscillator
+ 
+        function on() {
+            ctx.resume();
+        }
+ 
+        function off() {
+            ctx.suspend();
+        }
+ 
+        function setFrequency(value) {
+            osc.frequency.value = value;
+        }
+
+        </script>
+        
+    </body>
+</html>
